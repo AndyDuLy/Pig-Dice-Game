@@ -17,12 +17,12 @@
                     <br><br>
                     <div class="text-center" id="player1">Player 1</div>
                     <br><br>
-                    <div class="text-center holdScoreHeading">Current Score:</div>
-                    <div class="text-center holdScore" id="player1Hold"></div>
+                    <div class="text-center holdScoreHeading" id="holdPoints1">Current Score:</div>
+                    <div class="text-center holdScore" id="player1Hold">0</div>
                     <div class="text-center holdScoreSubtitle">points</div>
                     <br><br>
-                    <div class="text-center">Turn Holdings:</div>
-                    <div class="text-center turnScore" id="player1Turn"></div>
+                    <div class="text-center" id="turnHold1">Turn Holdings:</div>
+                    <div class="text-center turnScore" id="player1Turn">0</div>
                 </div>
 
                 <!-- Player 2, right side div/half  -->
@@ -30,32 +30,37 @@
                     <br><br>
                     <div class="text-center" id="player2">Player 2</div>
                     <br><br>
-                    <div class="text-center holdScoreHeading">Current Score:</div>
-                    <div class="text-center holdScore" id="player2Hold"></div>
+                    <div class="text-center holdScoreHeading" id="holdPoints2">Current Score:</div>
+                    <div class="text-center holdScore" id="player2Hold">0</div>
                     <div class="text-center holdScoreSubtitle">points</div>
                     <br><br>
-                    <div class="text-center">Turn Holdings:</div>
-                    <div class="text-center turnScore" id="player2Turn"></div>
+                    <div class="text-center" id="turnHold2">Turn Holdings:</div>
+                    <div class="text-center turnScore" id="player2Turn">0</div>
                 </div>
 
                 <!-- Middle Section Buttons -->
                 <div class="table text-center offset-5 col-2">
-                    <h2 class="rollDice rollDiceCaption bw">Roll</h2>
+                    <h2 onclick="rollDice()" class="rollDice rollDiceCaption bw" id='rollDice'>Roll</h2>
                 </div>
                 
                 <div class="table text-center offset-5 col-2">
-                    <h2 class="rollDice rollDiceCaption wb">Hold</h2>
+                    <h2 onclick="holdScore()"class="holdDice rollDiceCaption wb" id="holdScore">Hold</h2>
                 </div>
             </div>
 
             <!-- Dice Images, centered in game border box: display property to adjust based on javascript -->
-            <img class="diceImage diceOne" src="diceImages/diceOne.png">
-            <img class="diceImage diceTwo" src="diceImages/diceTwo.png">
-            <img class="diceImage diceThree" src="diceImages/diceThree.png">
-            <img class="diceImage diceFour" src="diceImages/diceFour.png">
-            <img class="diceImage diceFive" src="diceImages/diceFive.png">
-            <img class="diceImage diceSix" src="diceImages/diceSix.png">
+            <img class="diceImage diceOne" id="diceOne" src="diceImages/diceOne.png">
+            <img class="diceImage diceTwo" id="diceTwo" src="diceImages/diceTwo.png">
+            <img class="diceImage diceThree" id="diceThree" src="diceImages/diceThree.png">
+            <img class="diceImage diceFour" id="diceFour" src="diceImages/diceFour.png">
+            <img class="diceImage diceFive" id="diceFive" src="diceImages/diceFive.png">
+            <img class="diceImage diceSix" id="diceSix" src="diceImages/diceSix.png">
 
+            <!-- Winning Player Div -->
+            <div>
+                <h1 class="text-center hiddenWinner" id="hiddenWinner1">PLAYER 1 WINS!</h1>
+                <h1 class="text-center hiddenWinner" id="hiddenWinner2">PLAYER 2 WINS!</h1>
+            </div>
         </div>
     </body>
 
