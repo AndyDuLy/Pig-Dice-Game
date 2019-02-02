@@ -1,0 +1,64 @@
+.gameBorderBox {
+    width: 1000px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.player1, .player2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+}
+
+.holdScore {
+    font-size: 50px;
+}
+
+.holdScoreHeading {
+    font-size: 25px;
+}
+
+.holdScoreSubtitle {
+    font-size: 15px;
+}
+
+.rollDice {
+    width: 50px;
+    height: 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.rollDiceCaption {
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    position: relative;
+    top: 50%;
+    display: table-cell; 
+    vertical-align: middle;
+}
+
+.table {
+    display: table;
+}
+
+.bw {
+    background-color: black;
+    color: white;
+}
+
+.wb {
+    background-color: white;
+    color: black;
+}
