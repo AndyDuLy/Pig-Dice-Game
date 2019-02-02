@@ -35,7 +35,7 @@
 .hiddenWinner {
     display: none;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -62,6 +62,14 @@
     background-color: black;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+}
+
+.player1Turn {
+    border: 2px solid black;
+}
+
+.player2Turn {
+    border: 2px solid white;
 }
 
 .rollDiceCaption {
