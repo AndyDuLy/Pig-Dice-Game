@@ -1,3 +1,20 @@
+.diceImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.diceOne {display: none;}
+.diceTwo {display: none;}
+.diceThree {display: none;}
+.diceFour {display: none;}
+.diceFive {display: none;}
+.diceSix {display: none;}
+
 .gameBorderBox {
     width: 1000px;
     height: 500px;
