@@ -1,3 +1,7 @@
+.backdrop {
+    background-image: url(diceImages/backdrop.jpg);
+}
+
 .diceImage {
     position: absolute;
     top: 40%;
@@ -25,11 +29,27 @@
     background-color: #fff;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    display: none;
 }
 
-.player1, .player2 {
+.gameRules {
+    width: 1000px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: block;
+}
+
+.gameRulesStyling {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 20px;
+    font-size: 15px;
+    top: 15%;
+    color: black;
 }
 
 .hiddenWinner {
@@ -64,6 +84,11 @@
     overflow: hidden;
 }
 
+.player1, .player2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+}
+
 .player1Turn {
     border: 2px solid black;
 }
@@ -86,6 +111,7 @@
     display: table;
 }
 
+/* Roll dice and Hold points button styling, only exception to alphabetical ordering to avoid override */
 .bw {
     background-color: black;
     color: white;

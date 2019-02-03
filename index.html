@@ -9,13 +9,28 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     </head>
 
-    <body>
+    <body class="backdrop">
         <!-- How to play overlapping div -->
-        <div>
-
+        <div class="gameRules" id="gameRules">
+            <h2 class="text-center">HOW TO PLAY:</h2>
+            <hr>
+            <div class="text-center gameRulesStyling"> 
+                <br>
+                <p>Two players roll a dice in a turn-based style game.</p>
+                <p>Rolling 2-6 adds the respective number to your 'turn total'.</p>
+                <p>Rolling a 1 resets your 'turn total' and switches to the other player's turn.</p>
+                <p>After rolling at least one time, a number 2-6, you may choose to 'hold' your 'turn total'.</p>
+                <p>This will deposit your 'turn total' into your 'current points', reset your 'turn total' to zero, and switch turns.</p>
+                <p>The goal is to get to 100 'current points' before the other player does!</p>
+                <br>
+                <h2>Enjoy!</h2>
+                <br><hr>
+                <button onclick="startGame()">Start Game!</button>
+                <p>Game created by: Andy Du Ly @ (https://github.com/AndyDuLy/Pig-Dice-Game)</p>
+            </div>
         </div>
 
-        <div class="gameBorderBox">
+        <div class="gameBorderBox" id="gameStart">
             <div class="row">
                 <!-- Player 1, left side div/half  -->
                 <div class="player1 col-6">
