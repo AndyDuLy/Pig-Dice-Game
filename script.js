@@ -1,59 +1,56 @@
 // Player variables
-var player1Hold, player2Hold, player1Turn, player2Turn, currentPlayer;
+var player1Hold, player2Hold, player1Turn, player2Turn, currentPlayer, previousDiceRoll, diceRollValue;
 
-player1Hold = 0; player2Hold = 0; player1Turn = 0; player2Turn = 0; currentPlayer = 0;
+player1Hold = 0; player2Hold = 0; player1Turn = 0; player2Turn = 0; currentPlayer = 0; previousDiceRoll = 0; diceRollValue = 0;
 
 // Switch case function to be called everytime the dice is rolled to display the number rolled
 function changeDiceDisplay(rolled) {
     switch (true) {
         case (rolled === 1):
             document.getElementById('diceOne').style.display = 'block';
-            document.getElementById('diceTwo').style.display = 'none';
-            document.getElementById('diceThree').style.display = 'none';
-            document.getElementById('diceFour').style.display = 'none';
-            document.getElementById('diceFive').style.display = 'none';
-            document.getElementById('diceSix').style.display = 'none';
             break;
         case (rolled === 2):
-            document.getElementById('diceOne').style.display = 'none';
             document.getElementById('diceTwo').style.display = 'block';
-            document.getElementById('diceThree').style.display = 'none';
-            document.getElementById('diceFour').style.display = 'none';
-            document.getElementById('diceFive').style.display = 'none';
-            document.getElementById('diceSix').style.display = 'none';
             break;
         case (rolled === 3):
-            document.getElementById('diceOne').style.display = 'none';
-            document.getElementById('diceTwo').style.display = 'none';
             document.getElementById('diceThree').style.display = 'block';
-            document.getElementById('diceFour').style.display = 'none';
-            document.getElementById('diceFive').style.display = 'none';
-            document.getElementById('diceSix').style.display = 'none';
             break;
         case (rolled === 4): 
-            document.getElementById('diceOne').style.display = 'none';
-            document.getElementById('diceTwo').style.display = 'none';
-            document.getElementById('diceThree').style.display = 'none';
             document.getElementById('diceFour').style.display = 'block';
-            document.getElementById('diceFive').style.display = 'none';
-            document.getElementById('diceSix').style.display = 'none';
             break;
         case (rolled === 5): 
-            document.getElementById('diceOne').style.display = 'none';
-            document.getElementById('diceTwo').style.display = 'none';
-            document.getElementById('diceThree').style.display = 'none';
-            document.getElementById('diceFour').style.display = 'none';
             document.getElementById('diceFive').style.display = 'block';
-            document.getElementById('diceSix').style.display = 'none';
             break;
         case (rolled === 6):
-            document.getElementById('diceOne').style.display = 'none';
-            document.getElementById('diceTwo').style.display = 'none';
-            document.getElementById('diceThree').style.display = 'none';
-            document.getElementById('diceFour').style.display = 'none';
-            document.getElementById('diceFive').style.display = 'none';
             document.getElementById('diceSix').style.display = 'block';
             break;
+    }
+}
+
+// Switch case function to be called before the dice that is rolled is displayed
+function hidePreviousDice(previousRoll) {
+    // Checks if value is falsy, which is will be the first roll to keep the previousRoll variable one behind the current dice value
+    if (previousRoll) {
+        switch (true) {
+            case (previousRoll === 1):
+                document.getElementById('diceOne').style.display = 'none';
+                break;
+            case (previousRoll === 2):
+                document.getElementById('diceTwo').style.display = 'none';
+                break;
+            case (previousRoll === 3):
+                document.getElementById('diceThree').style.display = 'none';
+                break;
+            case (previousRoll === 4): 
+                document.getElementById('diceFour').style.display = 'none';
+                break;
+            case (previousRoll === 5): 
+                document.getElementById('diceFive').style.display = 'none';
+                break;
+            case (previousRoll === 6):
+                document.getElementById('diceSix').style.display = 'none';
+                break;
+        }
     }
 }
 
@@ -89,7 +86,10 @@ function addTurnScore(currentPlayer, valueToAdd) {
 
 // Funtion for dice roll logic and to indicate which player's turn it currently is
 function rollDice() {
-    var diceRollValue = Math.floor(Math.random() * 6) + 1;
+    // forces previous dice roll to be one roll behind, as it should be 
+    previousDiceRoll = diceRollValue;
+    hidePreviousDice(previousDiceRoll);
+    diceRollValue = Math.floor(Math.random() * 6) + 1;
     changeDiceDisplay(diceRollValue);
 
     // Switches players if dice rolled === 1
